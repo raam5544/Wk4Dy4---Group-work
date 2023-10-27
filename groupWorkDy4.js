@@ -13,9 +13,9 @@
 // getPrice() - return the price
 
 class Hamster {
-    constructor(owner) {
-        this.name = ''
-        this.owner = owner
+    constructor(name) {
+        this.name = name
+        this.owner = ''
         this.price = 15
     }
     wheelRun() {
@@ -73,6 +73,10 @@ class Person {
     greet() {
         console.log(`I'm ${this.name}, Hello there`)
     }
+    eat() {
+        this.weight++
+        this.mood++
+    }
     exercise() {
         this.weight--
     }
@@ -89,3 +93,50 @@ class Person {
         this.bankAccount -= hamster.getPrice()
     }
 }
+
+// Instantiate a new Person named Timmy
+const newPerson = new Person('Timmy')
+
+// Age Timmy five years
+
+for (let i = 1; i <= 5; i++) {
+    newPerson.ageUp()
+}
+
+// At this point Timmy's a little bummed. 
+// As a precocious child, he feels he's "seen it all" already. Have him eat five times.
+
+for (let i = 1; i <= 5; i++) {
+    newPerson.eat()
+}
+
+// Now Timmy's a little heavier than he wants to be. 
+// Kindergarten's coming up and he wants to look good. Have him exercise five times
+
+for (let i = 1; i <= 5; i++) {
+    newPerson.exercise()
+}
+
+// Age Timmy 9 years
+
+for (let i = 1; i <= 9; i++) {
+    newPerson.ageUp()
+}
+
+const gus = new Hamster('Gus')
+newPerson.buyHamster(gus)
+gus.owner = 'Timmy'
+// console.log(newPerson)
+
+for (let i = 1; i <= 15; i++) {
+    newPerson.ageUp()
+}
+
+for (let i = 1; i <= 15; i++) {
+    newPerson.ageUp()
+}
+// console.log(newPerson)
+newPerson.eat()
+newPerson.eat()
+newPerson.exercise()
+newPerson.exercise()
